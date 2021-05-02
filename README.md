@@ -20,6 +20,7 @@ This prompt for package.json options, enter as below:
 >      license: (ISC)
 
 
+
 ## 2. Install netlify-cli as dev dependency:
 >npm install -D netlify-cli
 
@@ -30,20 +31,30 @@ Since we are not using the -g (global) parameter when installing, we need to add
 
 ***Note: this will allow netlify cmd to be run without typing full path for with npm***
 
+
 ## 3. Create a netlify.toml file in the project role folder
 This tells where the functions folder resides.
+
 
 ## 4. Use netlify cli to create the scaffold  function, this will add it to the netlify.toml
 >      netlify function:create
 
-type in name your function prompt: ```fetch-weather```, this will have a hello world response example.  Clear it out.
+type in name your function prompt: ```fetch-weather```, <br/>this will have a hello world response example.  Clear it out.
+Add the folder ```.vscode``` and also ```launch.json``` to enable debugging with vs code.
 
 
-## 5. Install axios
+## 5. Code the fetch-weather.js
 >     npm install axios
+Also, use .env file to store environment variables, these will be hidden from the client and github (using .ignore file)
 
-## 6. Process request and response in newly created fetch-weather.js 
-The actual request/response from the API is hidden from the client side.  The only response is that which is returned by fetch-weather.js
+Process request and response in newly created fetch-weather.js, the actual request/response from the API will be hidden from the client side.  The only response is that which is returned by fetch-weather.js
+
+## 6. Add to source control and then in Netlify teamsite, use  "new site from git"
+> When deploying in Netify, copy the .env API_KEY variable into environment variables.
+
+The environment variable, in this project, is referred as: 
+>     const API_KEY = process.env.API_KEY
+
 
 
 
