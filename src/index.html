@@ -9,16 +9,27 @@
 </head>
 
 <body>
+
+    <div style="display: flex; justify-content:space-between;">
+        <h2>This is a pure JavaScript app</h2>
+        <a href="https://github.com/kamrul1/netlify-func-hide-key" target="_blank" rel="noopener noreferrer">Github Source Control</a>
+    </div>
+    <p>It's purpose is to demonstrate how to use netlify to hide api key.  In this case <a href="https://www.weatherbit.io/api" target="_blank" rel="noopener noreferrer">https://www.weatherbit.io/api</a></p>
+    <button type="button" onclick="handleClick(event)">Send request to netlify function</button>
     <pre id="responseData"></pre>
+
+
     <script>
-        //this results in http://localhost:8888/.netlify/functions/fetch-weather?name=united%20kingdom
-        fetch('.netlify/functions/fetch-weather?city=London&country=United Kingdom')
+        const handleClick = (e)=>{
+            e.preventDefault();
+            fetch('.netlify/functions/fetch-weather?city=London&country=United Kingdom')
             .then(response => response.json())
             .then(data =>{
                 const resData = JSON.stringify(data, null, 2)
                 console.log(resData);
                 document.getElementById("responseData").innerHTML=resData
             })
+        }
     </script>
 </body>
 

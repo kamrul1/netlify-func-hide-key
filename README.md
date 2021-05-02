@@ -42,7 +42,8 @@ type in name your function prompt: ```fetch-weather```, this will have a hello w
 ## 5. Install axios
 >     npm install axios
 
-
+## 6. Process request and response in newly created fetch-weather.js 
+The actual request/response from the API is hidden from the client side.  The only response is that which is returned by fetch-weather.js
 
 
 
